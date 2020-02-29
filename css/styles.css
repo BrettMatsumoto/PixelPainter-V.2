@@ -2,5 +2,11 @@ body {
     margin: 0;
     padding: 0;
     border: 0;
-    background-color: antiquewhite;
+    background-image: url("../bg_image/cream_pixels.png");
+}
+
+.gridRow, .gridColumn {
+    height: 10px;
+    width: 10px;
+    border: 1px solid black;
 }
