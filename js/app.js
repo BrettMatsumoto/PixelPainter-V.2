@@ -1,26 +1,32 @@
 'use strict';
 
-let mainCanvas = document.createElement('div');
-mainCanvas.id = 'mainCanvas';
-document.body.appendChild(mainCanvas);
+const title = document.createElement('h1');
+title.id = 'title';
+title.innerHTML = "Tupper's Self-Referential Formula";
+document.body.appendChild(title);
 
-let pixelMatrix = [];
-let rowCount = 10;
-let colCount = 10;
+const canvas = document.createElement('div');
+canvas.id = 'canvas';
+document.body.appendChild(canvas);
 
-const makeCanvasGrid = (x, y) => {
-    for (let i = 0; i < y; i++) {
+const makeCanvasMatrix = function (x, y) {
+
+    for (let i = 0; i < x; i++) {
         let column = document.createElement('div');
-        let columArr = [];
-        column.className = 'gridColumn';
-        mainCanvas.appendChild(column);
-        for (let j = 0; j < x; j++) {
-            let row = document.createElement('div');
-            row.className = 'gridRow';
-            column.appendChild(row);
-            columArr.push(row);
+        let columnArray = [];
+        column.className = 'canvasCollumns';
+        canvas.appendChild(column);
+        for (let k = 0; k < y; k++) {
+            let box = document.createElement('div');
+            box.className = 'boxes';
+            column.appendChild(box);
+            columnArray.push(box);
         }
     }
-    pixelMatrix.push(columArr);
-}
-makeCanvasGrid(numRows, numColumns);
+};
+makeCanvasMatrix(141, 17);
+
+const description = document.createElement('h3');
+description.id = 'description';
+description.innerHTML = "The Tupper's Self-Referential Formula is found at {k < y < k + 17}, where the height of this graph is 17 and k equals the value found below."
+document.body.appendChild(description);
